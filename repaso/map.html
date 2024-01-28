@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let colores = ["verde", "amarillo", "naranja"];
+
+        let nuevoArray = colores.map(color => {
+            return `${color} tiene ${color.length} letras`;
+        });
+
+        console.log(nuevoArray);
+
+        let numeros = ["nueve", "diez", "once"];
+
+        let otroArray = numeros.map(Number => {
+            return `${Number} tiene ${Number.length} letras`;
+        });
+
+        console.log(otroArray);
+        
+    </script>
+    
+</body>
+</html>

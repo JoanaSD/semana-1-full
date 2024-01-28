@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function prueba() {
+            return new Promise((a,b) => {
+
+                Math.random() > 0.5 ? a("promesa cumplida") : b("..error");
+
+            });
+        }
+
+        (async() => {
+
+            try {
+
+                let resultado = await prueba();
+
+                console.log(resultado);
+
+            }catch(excepcion){
+                console.log(excepcion);
+            }
+
+        })();
+
+        
+
+
+    </script>
+
+</body>
+</html>

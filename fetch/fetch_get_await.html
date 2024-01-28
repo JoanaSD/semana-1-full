@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+
+    </ul>
+
+    <script>
+
+        const lista = document.querySelector("ul");
+
+        (async() => {
+        
+            let colores = await fetch("https://api-bx2j.onrender.com/api-colores").then (respuesta => respuesta.json());
+
+            colores.forEach(({r,g,b}) => {
+
+                let item = document.createElement("li");
+                item.style.color = `rgb(${[r,g,b].join(",")})`;
+                item.innerText = [r,g,b].join(",");
+                lista.appendChild(item);
+
+            });
+
+        })();
+
+    </script>
+</body>
+</html>

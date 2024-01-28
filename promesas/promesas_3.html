@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let prueba = new Promise(callback => {
+            setTimeout(() =>{
+
+                callback("resultado promesa");
+
+            }, Math.random() * 2000);
+        });
+
+        prueba
+        .then(x => {
+            console.log(x);
+            return new Promise(callback => {
+                setTimeout(() =>{
+
+                    callback(x.split(" "));
+
+                }, Math.random() * 2000);
+        });
+        
+        })
+
+        .then(x => {
+            console.log(x);
+        });
+
+    </script>
+
+</body>
+</html>
